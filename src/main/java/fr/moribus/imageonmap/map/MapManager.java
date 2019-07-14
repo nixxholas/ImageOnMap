@@ -102,9 +102,9 @@ abstract public class MapManager
         return newMap;
     }
     
-    static public short[] getNewMapsIds(int amount)
+    static public int[] getNewMapsIds(int amount)
     {
-        short[] mapsIds = new short[amount];
+        int[] mapsIds = new int[amount];
         for(int i = 0; i < amount; i++)
         {
             mapsIds[i] = Bukkit.createMap(Bukkit.getWorlds().get(0)).getId();
