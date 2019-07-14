@@ -105,7 +105,7 @@ public class MapInitEvent implements Listener
         }
     }
     
-    static public void initMap(short id)
+    static public void initMap(int id)
     {
         initMap(Bukkit.getMap(id));
     }

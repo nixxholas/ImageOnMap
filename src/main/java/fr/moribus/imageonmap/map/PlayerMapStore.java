@@ -50,7 +50,7 @@ public class PlayerMapStore implements ConfigurationSerializable
         this.playerUUID = playerUUID;
     }
     
-    public synchronized boolean managesMap(short mapID)
+    public synchronized boolean managesMap(int mapID)
     {
         for(ImageMap map : mapList)
         {

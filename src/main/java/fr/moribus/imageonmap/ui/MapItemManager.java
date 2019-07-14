@@ -155,7 +155,7 @@ public class MapItemManager implements Listener
         return I.t("{0} (part {1})", map.getName(), index + 1);
     }
     
-    static public ItemStack createMapItem(short mapID, String text)
+    static public ItemStack createMapItem(int mapID, String text)
     {
         return new ItemStackBuilder(Material.MAP)
                 .data(mapID)
