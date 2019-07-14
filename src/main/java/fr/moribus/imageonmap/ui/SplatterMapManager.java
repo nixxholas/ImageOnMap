@@ -33,6 +33,8 @@ import org.bukkit.entity.ItemFrame;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.Damageable;
+import org.bukkit.inventory.meta.ItemMeta;
 
 abstract public class SplatterMapManager 
 {
@@ -107,7 +109,12 @@ abstract public class SplatterMapManager
         for(ItemFrame frame : wall.frames)
         {
             int id = poster.getMapIdAtReverseY(i);
-            frame.setItem(new ItemStack(Material.MAP, 1, id));
+            ItemStack itemStack = new ItemStack(Material.LEGACY_MAP, id);
+            Damageable meta = (Damageable) itemStack.getItemMeta();
+            meta.setDamage(1);
+            itemStack.setItemMeta((ItemMeta) meta);
+
+            frame.setItem(itemStack);
             MapInitEvent.initMap(id);
             ++i;
         }

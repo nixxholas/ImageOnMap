@@ -29,7 +29,7 @@ import org.bukkit.configuration.InvalidConfigurationException;
 
 class OldSavedMap 
 {
-    private final short mapId;
+    private final int mapId;
     private final String mapName;
     private final String userName;
     
@@ -68,7 +68,7 @@ class OldSavedMap
     public void serialize(Configuration configuration)
     {
         ArrayList<String> data = new ArrayList<String>();
-        data.add(Short.toString(mapId));
+        data.add(Integer.toString(mapId));
         data.add(mapName);
         data.add(userName);
         configuration.set(mapName, data);
@@ -79,6 +79,6 @@ class OldSavedMap
         return MapManager.mapIdExists(mapId);
     }
     
-    public short getMapId() {return mapId;}
+    public int getMapId() {return mapId;}
     public String getUserName() {return userName;}
 }

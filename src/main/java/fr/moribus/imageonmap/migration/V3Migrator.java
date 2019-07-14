@@ -427,7 +427,7 @@ public class V3Migrator implements Runnable
         ArrayDeque<OldSavedMap> remainingMaps = new ArrayDeque<>();
         ArrayDeque<OldSavedPoster> remainingPosters = new ArrayDeque<>();
         
-        ArrayDeque<Short> missingMapIds = new ArrayDeque<>();
+        ArrayDeque<Integer> missingMapIds = new ArrayDeque<>();
         
         UUID playerUUID;
         OldSavedMap map;
