@@ -38,7 +38,7 @@ public class Renderer extends MapRenderer
         return false;
     }
     
-    static public void installRenderer(PosterImage image, short[] mapsIds)
+    static public void installRenderer(PosterImage image, int[] mapsIds)
     {
         for(int i = 0; i < mapsIds.length; i++)
         {
@@ -46,7 +46,7 @@ public class Renderer extends MapRenderer
         }
     }
     
-    static public void installRenderer(BufferedImage image, short mapID)
+    static public void installRenderer(BufferedImage image, int mapID)
     {
         MapView map = Bukkit.getMap(mapID);
         if(map == null)

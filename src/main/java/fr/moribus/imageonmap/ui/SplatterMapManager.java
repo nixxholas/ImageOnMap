@@ -106,7 +106,7 @@ abstract public class SplatterMapManager
         int i = 0;
         for(ItemFrame frame : wall.frames)
         {
-            short id = poster.getMapIdAtReverseY(i);
+            int id = poster.getMapIdAtReverseY(i);
             frame.setItem(new ItemStack(Material.MAP, 1, id));
             MapInitEvent.initMap(id);
             ++i;
