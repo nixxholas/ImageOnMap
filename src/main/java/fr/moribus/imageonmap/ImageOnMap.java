@@ -64,7 +64,7 @@ public final class ImageOnMap extends ZPlugin
     
     public File getImagesDirectory() {return imagesDirectory;}
     public File getMapsDirectory() {return mapsDirectory;}
-    public File getImageFile(short mapID)
+    public File getImageFile(int mapID)
     {
         return new File(imagesDirectory, "map"+mapID+".png");
     }

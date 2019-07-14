@@ -68,8 +68,8 @@ public abstract class ImageMap implements ConfigurationSerializable
     }
     
     
-    public abstract short[] getMapsIDs();
-    public abstract boolean managesMap(short mapID);
+    public abstract int[] getMapsIDs();
+    public abstract boolean managesMap(int mapID);
     public abstract int getMapCount();
     
     public boolean managesMap(ItemStack item)

@@ -52,8 +52,8 @@ abstract public class MapManager
         playerMaps.clear();
         if(autosaveTask != null) autosaveTask.cancel();
     }
-    
-    static public boolean managesMap(short mapID)
+
+    static public boolean managesMap(int mapID)
     {
         synchronized(playerMaps)
         {
@@ -80,14 +80,14 @@ abstract public class MapManager
         return false;
     }
 
-    static public ImageMap createMap(UUID playerUUID, short mapID) throws MapManagerException
+    static public ImageMap createMap(UUID playerUUID, int mapID) throws MapManagerException
     {
         ImageMap newMap = new SingleMap(playerUUID, mapID);
         addMap(newMap);
         return newMap;
     }
     
-    static public ImageMap createMap(PosterImage image, UUID playerUUID, short[] mapsIDs) throws MapManagerException
+    static public ImageMap createMap(PosterImage image, UUID playerUUID, int[] mapsIDs) throws MapManagerException
     {
         ImageMap newMap;
         if(image.getImagesCount() == 1)
@@ -102,9 +102,9 @@ abstract public class MapManager
         return newMap;
     }
     
-    static public short[] getNewMapsIds(int amount)
+    static public int[] getNewMapsIds(int amount)
     {
-        short[] mapsIds = new short[amount];
+        int[] mapsIds = new int[amount];
         for(int i = 0; i < amount; i++)
         {
             mapsIds[i] = Bukkit.createMap(Bukkit.getWorlds().get(0)).getId();
@@ -173,7 +173,7 @@ abstract public class MapManager
      * @param mapId The ID of the Minecraft map.
      * @return The {@link ImageMap}.
      */
-    static public ImageMap getMap(short mapId)
+    static public ImageMap getMap(int mapId)
     {
         synchronized(playerMaps)
         {
@@ -312,7 +312,7 @@ abstract public class MapManager
      * @param mapId the map ID.
      * @return true if the given map ID is valid and exists in the current save, false otherwise.
      */
-    static public boolean mapIdExists(short mapId)
+    static public boolean mapIdExists(int mapId)
     {
         try
         {
